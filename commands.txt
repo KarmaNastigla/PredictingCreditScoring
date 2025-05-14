@@ -1,0 +1,26 @@
+docker build -t <image_name> . или ./dir
+
+docker build -t titanic-frontend ./frontend
+docker build -t titanic-backend ./backend
+
+docker run -p 8501:8501 titanic-frontend
+docker run -p 8000:8000 titanic-backend
+
+docker run --name <container_name> -d (ключ для запуска в фоне) <image_name>
+
+docker run -p 8501:8501 -e API_BASE_URL=http://host.docker.internal:8000 --name frontend-container -d titanic-frontend
+docker run -p 8501:8501 -e API_BASE_URL=http://127.0.0.1:8000 --name frontend-container -d titanic-frontend
+docker run -p 8000:8000 --name backend-container -d titanic-backend
+
+
+docker exec -it <container_name> /bin/bash - зайти в контейнер
+
+docker-compose down
+docker compose up --build -d
+
+1 docker-compose ps	          Показать статус контейнеров
+2 docker-compose up           Запускает существующие контейнеры
+3 docker-compose logs	      Показать логи
+4 docker-compose stop	      Остановить без удаления
+5 docker-compose down	      Остановить и удалить контейнеры
+6 docker-compose up --build   Пересобирает образы и запускает контейнеры заново

@@ -1,0 +1,38 @@
+{
+    "input_size": 22,
+    "feature_names": [
+        "fico_range_low",
+        "dti",
+        "revol_util",
+        "open_acc",
+        "total_acc",
+        "pub_rec_bankruptcies",
+        "annual_inc",
+        "loan_amnt",
+        "emp_length",
+        "term",
+        "int_rate",
+        "mort_acc",
+        "delinq_2yrs",
+        "inq_last_6mths",
+        "OTHER",
+        "OWN",
+        "RENT",
+        "purpose_debt_consolidation",
+        "purpose_home_improvement",
+        "purpose_other",
+        "Source_Verified",
+        "Verified"
+    ],
+    "target_classes": [
+        0,
+        1
+    ],
+    "model_architecture": "NeuralNetwork(\n  (layers): Sequential(\n    (0): Linear(in_features=22, out_features=256, bias=True)\n    (1): ReLU()\n    (2): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    (3): Dropout(p=0.4, inplace=False)\n    (4): Linear(in_features=256, out_features=128, bias=True)\n    (5): ReLU()\n    (6): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    (7): Dropout(p=0.3, inplace=False)\n    (8): Linear(in_features=128, out_features=64, bias=True)\n    (9): ReLU()\n    (10): Linear(in_features=64, out_features=1, bias=True)\n    (11): Sigmoid()\n  )\n)",
+    "scaling_method": "StandardScaler",
+    "best_thresholds": {
+        "0.5": 0.8922256499858946,
+        "0.7": 0.8524842987449142,
+        "0.75": 0.8120992397391845
+    }
+}

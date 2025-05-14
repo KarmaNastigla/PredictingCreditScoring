@@ -1,0 +1,27 @@
+# файл для управления приложениями в Docker
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"       # Проброс порта FastAPI на хост
+    volumes:
+      - ./backend:/app    # Синхронизация кода
+      - /app/saved_model  # исключаем перезапись моделей
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "8501:8501"        # Проброс порта Streamlit
+    volumes:
+      - ./frontend:/app
+    depends_on:
+      - backend            # Ждет запуска бэкенда
+    environment:           # Устанавливает переменные окружения
+      - PYTHONUNBUFFERED=1
+      - PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python
+    restart: unless-stopped
