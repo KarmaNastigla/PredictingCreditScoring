@@ -55,3 +55,4 @@ docker-compose.override.yml  # Локальные настройки Docker
 
 # Тестовые данные (если нужно оставить примеры)
 !train_model/data/sample_*.csv  # Исключение: файлы-примеры
+echo "train_model/data/" >> .gitignore
