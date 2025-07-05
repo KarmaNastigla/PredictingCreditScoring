@@ -1,16 +1,13 @@
 ### Настройки IDE и редакторов кода ###
 # JetBrains IDE (PyCharm, IntelliJ IDEA)
-.idea/          # Вся папка конфигурации IDE
-*.iml           # Файлы конфигурации модулей
+.idea/
+*.iml
 
 ### Python-специфичные файлы ###
-__pycache__/    # Папка с кэшированным байт-кодом Python
-*.py[cod]       # Скомпилированные файлы Python:
-                # .pyc - байт-код
-                # .pyo - оптимизированный байт-код
-                # .pyd - Windows Python DLLs
-*.py~           # Резервные копии от редакторов
-*.ipynb_checkpoints/ # Кэш Jupyter Notebook
+__pycache__/
+*.py[cod]
+*.py~
+*.ipynb_checkpoints/
 
 
 ### Данные и модели машинного обучения ###
@@ -19,36 +16,29 @@ train_model/data/*
 !train_model/data/sample_*.csv  # Исключение: файлы-примеры
 
 # Дополнительные исключения для данных
-*.h5                # Модели Keras
-*.pth               # Модели PyTorch
-*.joblib            # Сериализованные модели
-*.npy               # NumPy массивы
+*.h5
+*.pth
+*.joblib
+*.npy
+*.pptx
 
 
 ### Временные и системные файлы ###
-# Редакторы/ОС
-*.swp            # Swap-файлы Vim
-*.tmp            # Временные файлы
-.DS_Store        # Настройки папок macOS
-Thumbs.db        # Кэш миниатюр Windows
-desktop.ini      # Настройки папок Windows
+*.swp
+*.tmp
+.DS_Store
+Thumbs.db
+desktop.ini
 
-# Логи и кэш
-*.log            # Файлы логов
-*.cache          # Кэш-файлы
+*.log
+*.cache
 
 
 ### Дополнительные рекомендуемые исключения ###
-# Файлы окружения
-.env            # Локальные переменные окружения
-*.env           # Все файлы окружения
-env/            # Виртуальные окружения
+.env
+*.env
+env/
 venv/
 *.venv/
 
-# Docker
-docker-compose.override.yml  # Локальные настройки Docker
-
-# Тестовые данные (если нужно оставить примеры)
-!train_model/data/sample_*.csv  # Исключение: файлы-примеры
-echo "train_model/data/" >> .gitignore
+docker-compose.override.yml
