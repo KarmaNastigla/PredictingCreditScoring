@@ -22,7 +22,7 @@ __pycache__/    # Папка с кэшированным байт-кодом Pyt
 train_model/data/     # Исходными датасетами (.csv, .xlsx)
 echo "*.pptx" >> .gitignore
 echo "train_model/data/credit_data.csv" >> .gitignore
-echo "train_model/data/Bank 2007 to 2018.csv" >> .gitignore
+echo "train_model/data/Bank 2007 to 2018.csv"
 
 # Дополнительные исключения для данных
 *.h5                # Модели Keras
