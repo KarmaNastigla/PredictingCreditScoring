@@ -3,10 +3,6 @@
 .idea/          # Вся папка конфигурации IDE
 *.iml           # Файлы конфигурации модулей
 
-# VS Code (если используется)
-.vscode/        # Папка с настройками VS Code
-
-
 ### Python-специфичные файлы ###
 __pycache__/    # Папка с кэшированным байт-кодом Python
 *.py[cod]       # Скомпилированные файлы Python:
@@ -18,11 +14,9 @@ __pycache__/    # Папка с кэшированным байт-кодом Pyt
 
 
 ### Данные и модели машинного обучения ###
-# Исключаем папки с:
-train_model/data/     # Исходными датасетами (.csv, .xlsx)
-echo "*.pptx" >> .gitignore
-echo "train_model/data/credit_data.csv" >> .gitignore
-echo "train_model/data/Bank 2007 to 2018.csv"
+# Исключаем всю папку с данными
+train_model/data/*
+!train_model/data/sample_*.csv  # Исключение: файлы-примеры
 
 # Дополнительные исключения для данных
 *.h5                # Модели Keras
